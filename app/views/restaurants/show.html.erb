@@ -1,0 +1,11 @@
+<h1>My restaurant page</h1>
+<div class="card">
+  <% @restaurant.reviews.each do |review| %>
+    <div class="card-body">
+      <%= review.content %>
+      The grade I give is <%= review.rating %>
+    </div>
+  <% end %>
+</div>
+<%= link_to "Add a comment",  new_restaurant_review_path(@restaurant), class: "btn btn-primary"%>
+<%= link_to "See all restaurants", restaurants_path, class: "btn btn-primary"%>
